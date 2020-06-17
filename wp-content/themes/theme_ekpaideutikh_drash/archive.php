@@ -2,10 +2,10 @@
 
 <!--    render the <main> from header(if is not the front page)-->
 
-    <a href="<?php echo site_url('/blog'); ?>">
+
         <h2 class="page-heading"> <?php  the_archive_title(); ?></h2>
 <!--        < ? php  the_archive_title(); ?> kai sou deixnei to titlo tou archive -->
-    </a>
+
 
     <section>
 
@@ -34,7 +34,7 @@
                     <p>
                         <?php echo wp_trim_words(the_excerpt(), 30); ?>
                     </p>
-                    <a href="<?php the_permalink(); ?>" class="btn-readmore">Read more</a>
+                    <a href="<?php the_permalink(); ?>" class="btn-readmore">Διάβασε περισσότερα</a>
                 </div>
             </div>
 

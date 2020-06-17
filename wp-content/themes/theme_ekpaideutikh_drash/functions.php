@@ -54,5 +54,32 @@ function gt_custom_post_type()
 
 add_action('init', 'gt_custom_post_type');
 
-
 add_filter('show_admin_bar', '__return_false');
+
+//Sidebar
+
+function gt_widgets()
+{
+    register_sidebar(
+        array(
+            'name' => 'Main Sidebar',
+            'id' => 'main_sidebar',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>'
+        )
+    );
+}
+
+add_action('widgets_init', 'gt_widgets');
+
+//Filters to display only for blog and projects when we search
+
+function search_filter($query)
+{
+
+    if ($query->is_search) {
+        $query->set('post_type', array('post', 'project'));
+    }
+}
+
+add_filter('pre_get_posts' , 'search_filter');

@@ -11,8 +11,11 @@ the_post();
     <section id="blogpost">
         <div class="card">
             <div class="card-meta-blogpost">
-                Δημιουργήθηκε από <?php the_author(); ?> στις <?php the_time('F j Y,'); ?> στην κατηγορία
-                <a href="#"><?php echo get_the_category_list(',') ?></a>
+                Δημιουργήθηκε από <?php the_author(); ?> στις <?php the_time('F j Y'); ?>
+                <?php if(get_post_type() == 'post'){ ?>
+                 στην κατηγορία
+                <a href="#"><?php echo get_the_category_list(', ') ?></a>
+                <?php } ?>
             </div>
             <div class="card-image">
                 <img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" alt="Card Image">
@@ -80,9 +83,10 @@ the_post();
 
     <?php } ?>
 
+<!--  sidebar  -->
+
     <aside id="sidebar">
-        <h3>Sidebar Heading</h3>
-        <p>Sidebar 1</p>
+       <?php dynamic_sidebar('main_sidebar') ?>
     </aside>
 </div>
 

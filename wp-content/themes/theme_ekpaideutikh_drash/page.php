@@ -5,8 +5,9 @@
 while (have_posts()){
 the_post();
 ?>
-
+<main>
     <h2 class="page-heading"><?php the_title(); ?></h2>
+    <h2 class="page-heading"><a href="<?php echo site_url('/contact'); ?>">Επικοινωνήστε μαζί μας</a></h2>
 <div id="post-container">
     <section id="blogpost">
         <div class="card">
@@ -29,9 +30,13 @@ the_post();
     <?php } ?>
 
     <aside id="sidebar">
-        <h3>Sidebar Heading</h3>
-        <p>Sidebar 1</p>
+       <?php dynamic_sidebar('main_sidedar') ?>
     </aside>
 </div>
+
+
+<!--   Έχω εδώ το main γιατί το footer μου έβγεε μαλακισμένα  -->
+
+
 
 <?php get_footer(); ?>

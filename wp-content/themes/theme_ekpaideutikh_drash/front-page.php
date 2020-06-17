@@ -52,7 +52,7 @@
     </section>
 
 
-    <a href="blogslist.html">
+    <a href="<?php echo site_url('/projects'); ?>">
         <h2 class="section-heading">All Projects</h2>
     </a>
 

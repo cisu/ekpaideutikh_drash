@@ -2,9 +2,9 @@
 
 <!--    render the <main> from header(if is not the front page)-->
 
-    <a href="<?php echo site_url('/blog'); ?>">
-        <h2 class="page-heading">All Blogs</h2>
-    </a>
+
+        <h2 class="page-heading">Όλα τα ποστ</h2>
+
 
     <section>
 
@@ -33,7 +33,7 @@
                     <p>
                         <?php echo wp_trim_words(the_excerpt(), 30); ?>
                     </p>
-                    <a href="<?php the_permalink(); ?>" class="btn-readmore">Read more</a>
+                    <a href="<?php the_permalink(); ?>" class="btn-readmore">Διάβασε περισσότερα</a>
                 </div>
             </div>
 
